@@ -9,13 +9,14 @@ import cart from '../../images/cart.png';
 
 
 
+
 const NavbarLogin = () => {
   return (
     <Navbar className="sticky-top" bg="dark" variant="dark" expand="sm">
     <Container>
         <Navbar.Brand>
             <a href='/'>
-                <img src={logo} className='logo' />
+                <img src={logo} alt='' className='logo' />
             </a>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

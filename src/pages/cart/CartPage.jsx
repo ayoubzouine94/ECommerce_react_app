@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import CartItem from '../../components/cart/CartItem'
 import CartCheckout from './CartCheckout'
 

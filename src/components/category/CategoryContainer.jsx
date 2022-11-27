@@ -1,28 +1,36 @@
-import React from 'react';
-import { Container,Row } from 'react-bootstrap';
+import React,{useEffect} from 'react';
+import { Container,Spinner,Row } from 'react-bootstrap';
 import CategorieCard from './CategorieCard';
 import pic from '../../images/pic.png';
-import laptop from '../../images/mobile.png';
-import sale from '../../images/sale.png';
-import clothe from '../../images/clothe.png';
-import cat2 from '../../images/cat2.png';
+import { useSelector,useDispatch } from 'react-redux';
+import getAllCategories from '../../redux/actions/categorieAction';
 
-
-
+const colors = ["#FFD3E8","#F4DBA5","#55CFDF","#FF6262","#0034FF","#FFD3E8"];
 const CategoryContainer = () => {
+  const dispach = useDispatch();
+  const categorieData = useSelector(state=>state.allCategory.categorie);
+  const loading = useSelector(state=>state.allCategory.loading);
+  useEffect(() => {
+    dispach(getAllCategories());
+  }, [])
+
+  
   return (  
     <Container>
         <Row className='my-2 d-flex justify-content-between'> 
-            <CategorieCard  img={pic} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={cat2} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={laptop} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={sale} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={clothe} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={pic} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={cat2} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={laptop} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={sale} title="Appareil ménager" background='#F4DBA4' />
-            <CategorieCard  img={clothe} title="Appareil ménager" background='#F4DBA4' />
+       
+        {
+          loading === false ?(
+          categorieData.data ?(
+           categorieData.data.map((item,index)=>{
+         return(<CategorieCard key={index} img={item.image} title={item.name} background={colors[Math.floor(Math.random() * 5)+1]} />)   
+           })
+         ) : <h2>Pas de Categorie</h2>
+         ) : <Spinner animation="grow" />
+         }
+
+            
+           
         </Row>    
     </Container>
 

@@ -12,10 +12,21 @@ import CartPage from "./pages/cart/CartPage";
 import ChoosePayMethodPage from "./pages/payment/ChoosePayMethodPage";
 import AdminAllProductPage from "./pages/admin/AdminAllProductPage";
 import AdminAllOrdersPage from "./pages/admin/AdminAllOrdersPage";
+import AdminOrdersDetailsPage from "./pages/admin/AdminOrdersDetailsPage";
 
+import AdminAddBrandPage from "./pages/admin/AdminAddBrandPage";
+import AdminAddCategoryPage from "./pages/admin/AdminAddCategoryPage";
 
+import AddSubCategoriePage from "./pages/admin/AddSubCategoriePage";
+import AdminAddProductPage from "./pages/admin/AdminAddProductPage";
+import UserAllOrdersPage from "./pages/user/UserAllOrdersPage";
+import UserFavoriteProdutsPage from "./pages/user/UserFavoriteProdutsPage";
+import UserAdressePage from "./pages/user/UserAdressePage";
+import UserAddAdressPage from "./pages/user/UserAddAdressPage";
+import UserEditAdressPage from "./pages/user/UserEditAdressPage";
+import UserProfilePage from "./pages/user/UserProfilePage";
 
-function App() {
+const App = () =>{
   return (
     <div className="font">
       <NavbarLogin />
@@ -32,6 +43,39 @@ function App() {
           <Route  path="/order/paymethoud" element={<ChoosePayMethodPage />} />
           <Route  path="/admin/allproducts" element={<AdminAllProductPage />} />
           <Route  path="/admin/allorders" element={<AdminAllOrdersPage />} />
+          <Route  path="/admin/orders/:id" element={<AdminOrdersDetailsPage />} />
+          <Route  path="/admin/addbrand" element={<AdminAddBrandPage />} />
+          <Route  path="/admin/addcategory" element={<AdminAddCategoryPage />} />
+          <Route  path="/admin/addsubcategory" element={<AddSubCategoriePage />} />
+          <Route  path="/admin/addproduct" element={<AdminAddProductPage />} />
+
+          <Route  path="/user/allorders" element={<UserAllOrdersPage />} />
+          <Route  path="/user/productfavorite" element={<UserFavoriteProdutsPage />} />
+
+          <Route  path="/user/Adress" element={<UserAdressePage />} />
+          
+          
+
+          <Route  path="/user/add-address" element={<UserAddAdressPage />} />
+          <Route  path="/user/edit-address" element={< UserEditAdressPage />} />
+          <Route  path="/user/profile" element={< UserProfilePage />} />
+         
+          
+
+          
+
+          
+
+          
+          
+         
+          
+          
+          
+          
+          
+
+
 
 
           

@@ -34,7 +34,7 @@ const LoginPage = () => {
 
 
         <label className="mx-auto my-4">
-        <Link to="/admin/allproduct" style={{textDecoration:'none'}}>
+        <Link to="/admin/allproducts" style={{textDecoration:'none'}}>
             <span style={{ cursor: "pointer" }} className="text-danger">
                 Admin
             </span>
