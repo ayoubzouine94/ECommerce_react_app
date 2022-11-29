@@ -8,7 +8,7 @@ import laptop from '../../images/prod1.png';
 import sale from '../../images/sale.png';
 import clothe from '../../images/clothe.png';
 import { useSelector,useDispatch } from 'react-redux';
-import getAllCategories from '../../redux/actions/categorieAction';
+import {getAllCategories} from '../../redux/actions/categorieAction';
 
 const HomeCategorie = () => {
   const dispach = useDispatch();
