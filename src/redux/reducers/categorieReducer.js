@@ -6,7 +6,7 @@ const initial ={
     categorie:[],
     loading:true,
 }
-const categorieReducer = (state=initial ,action) =>{
+const categorieReducer = (state = initial ,action) =>{
          switch (action.type) {
             case GET_ALL_CATEGORY:
                 return {

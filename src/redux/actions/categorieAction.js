@@ -21,7 +21,7 @@ export const getAllCategories=(limit) => async (dispatch) =>{
 //get All Categories with Pagination
 export const getAllCategoriesPages=(page) => async (dispatch) =>{
     try {
-       const response = await useGetData(`/api/v1/categories?page=${page}&limit=3`)
+       const response = await useGetData(`/api/v1/categories?limit=6&page=${page}`)
         dispatch( {
             type:GET_ALL_CATEGORY,
             payload: response,
@@ -38,7 +38,7 @@ export const getAllCategoriesPages=(page) => async (dispatch) =>{
 //Create Categorie
 export const createCategorie=(formData) => async (dispatch) =>{
     try {
-       const response = await useInsertDataWithImg('/api/v1/categories',formData)
+       const response = await useInsertDataWithImg(`/api/v1/categories`,formData);
         dispatch( {
             type:CREATE_CATEGORIE,
             payload: response,
@@ -47,7 +47,7 @@ export const createCategorie=(formData) => async (dispatch) =>{
 
         
     } catch (error) {
-        dispatch({
+        dispatch( {
             type:GET_ERROR,
             payload: "Erreur"+ error,
         })
